@@ -1,0 +1,2 @@
+class UserRelaxationCategoriesController < ApplicationController
+end
