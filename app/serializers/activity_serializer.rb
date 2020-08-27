@@ -1,3 +1,13 @@
 class ActivitySerializer < ActiveModel::Serializer
-  attributes :id, :activity_description, :relaxation_category_id
+
+  def initialize(activity_object)
+    @activity = activity_object
+  end
+ 
+  def to_serialized_json
+      options = {
+          }
+      @activity.to_json(options)
+  end
+
 end

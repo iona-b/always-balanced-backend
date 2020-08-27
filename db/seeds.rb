@@ -1,4 +1,4 @@
-# # User: username, password_digest, start_work_time, min_num_hours, max_num_hours, relaxation_category_1, relaxation_category_2, relaxation_category_3
+# # User: username, password_digest, start_work_time, min_num_hours, max_num_hours
 
 # user_1 = User.create(username: "iona", password_digest:"123", start_work_time:8, min_num_hours:6, max_num_hours:9)
 
