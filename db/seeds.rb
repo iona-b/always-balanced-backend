@@ -3,12 +3,6 @@
 # user_1 = User.create(username: "iona", password_digest:"123", start_work_time:8, min_num_hours:6, max_num_hours:9)
 
 
-# # User Relaxation Categories: user_id, relaxation_category_id
-
-# user_relaxation_category_1 = UserRelaxationCategory.create(user_id: 1, relaxation_category_id: 1)
-# user_relaxation_category_2 = UserRelaxationCategory.create(user_id: 1, relaxation_category_id: 3)
-# user_relaxation_category_3 = UserRelaxationCategory.create(user_id: 1, relaxation_category_id: 5)
-
 # # Relaxation Category: category_name
 
 # relaxation_category_1 = RelaxationCategory.create(category_name: "Creative")
@@ -20,6 +14,13 @@
 # relaxation_category_7 = RelaxationCategory.create(category_name: "Musical")
 # relaxation_category_8 = RelaxationCategory.create(category_name: "Social")
 # relaxation_category_9 = RelaxationCategory.create(category_name: "Comfort")
+
+
+# # User Relaxation Categories: user_id, relaxation_category_id
+
+# user_relaxation_category_1 = UserRelaxationCategory.create(user_id: 1, relaxation_category_id: 1)
+# user_relaxation_category_2 = UserRelaxationCategory.create(user_id: 1, relaxation_category_id: 3)
+# user_relaxation_category_3 = UserRelaxationCategory.create(user_id: 1, relaxation_category_id: 5)
 
 
 # # Activites: activity_description, relaxation_category_id, short_activity, long_activity
@@ -39,4 +40,25 @@
 # activity_13 = Activity.create(activity_description:"Call a family member", relaxation_category_id:7, short_activity:false, long_activity:true)
 # activity_14 = Activity.create(activity_description:"Send a friend a message", relaxation_category_id:7, short_activity:true, long_activity:false)
 
-# puts "Seeds done!"
+
+# # Schedules: date, user_id
+
+# schedule_1 = Schedule.create(date: "08.27.2020", user_id: 1)
+
+
+# # Schedule Activities: schedule_id, activity_id
+
+# schedule_activity_1 = ScheduleActivity.create(schedule_id: 1, activity_id: 1)
+
+
+# # Tasks: task_description, task_notes, user_id
+
+# task_1 = Task.create(task_description: "Homework", task_notes: "Finish homework", user_id: 1)
+
+
+# # Schedule Tasks: schedule_id, task_id
+
+# schedule_task_1 = ScheduleTask.create(schedule_id: 1, task_id: 1)
+
+
+puts "Seeds done!"

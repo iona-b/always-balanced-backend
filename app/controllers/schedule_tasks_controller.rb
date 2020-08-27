@@ -1,0 +1,2 @@
+class ScheduleTasksController < ApplicationController
+end
