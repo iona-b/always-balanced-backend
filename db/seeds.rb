@@ -1,6 +1,8 @@
 # # User: username, password_digest, start_work_time, min_num_hours, max_num_hours
 
-# user_1 = User.create(username: "iona", password_digest:"123", start_work_time:8, min_num_hours:6, max_num_hours:9)
+# user_1 = User.create(username: "iona", password:'123', start_work_time:8, min_num_hours:6, max_num_hours:9)
+# user_2 = User.create(username: "michiel", password:'123', start_work_time:8, min_num_hours:6, max_num_hours:9)
+# user_3 = User.create(username: "yoko", password:'123', start_work_time:8, min_num_hours:6, max_num_hours:9)
 
 
 # # Relaxation Category: category_name
@@ -61,4 +63,4 @@
 # schedule_task_1 = ScheduleTask.create(schedule_id: 1, task_id: 1)
 
 
-puts "Seeds done!"
+# puts "Seeds done!"
