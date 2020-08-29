@@ -15,7 +15,6 @@ class SchedulesController < ApplicationController
     end
 
     def create
-        byebug
         schedule = Schedule.create(date: Time.now, user_id: schedule_params[:user_id])
         render json: ScheduleSerializer.new(schedule).to_serialized_json
     end
