@@ -1,8 +1,8 @@
 # # User: username, password_digest, start_work_time, min_num_hours, max_num_hours
 
-# user_1 = User.create(username: "iona", password:'123', start_work_time:8, min_num_hours:6, max_num_hours:9)
-# user_2 = User.create(username: "michiel", password:'123', start_work_time:8, min_num_hours:6, max_num_hours:9)
-# user_3 = User.create(username: "yoko", password:'123', start_work_time:8, min_num_hours:6, max_num_hours:9)
+# user_1 = User.create(username: "iona", password:'123', start_work_time:"08:00", min_num_hours:6, max_num_hours:9)
+# user_2 = User.create(username: "michiel", password:'123', start_work_time:"08:00", min_num_hours:6, max_num_hours:9)
+# user_3 = User.create(username: "yoko", password:'123', start_work_time:"09:00", min_num_hours:6, max_num_hours:9)
 
 
 # # Relaxation Category: category_name
@@ -43,9 +43,9 @@
 # activity_14 = Activity.create(activity_description:"Send a friend a message", relaxation_category_id:7, short_activity:true, long_activity:false)
 
 
-# # Schedules: date, user_id
+# Schedules: date, user_id
 
-# schedule_1 = Schedule.create(date: "08.27.2020", user_id: 1)
+# schedule_1 = Schedule.create(date: "2020-08-29", user_id: 1)
 
 
 # # Schedule Activities: schedule_id, activity_id
@@ -63,4 +63,4 @@
 # schedule_task_1 = ScheduleTask.create(schedule_id: 1, task_id: 1)
 
 
-# puts "Seeds done!"
+puts "Seeds done!"

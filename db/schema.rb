@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2020_08_27_161744) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.integer "start_work_time"
+    t.time "start_work_time"
     t.integer "min_num_hours"
     t.integer "max_num_hours"
     t.datetime "created_at", precision: 6, null: false
