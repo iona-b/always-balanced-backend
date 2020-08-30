@@ -20,7 +20,7 @@ class ScheduleTasksController < ApplicationController
     end
 
     def schedule_task_params
-        params.require(:schedule_task).permit(:schedule_id, :task_id)
+        params.permit(:schedule_id, :task_id, :schedule_task)
     end
 
 end
