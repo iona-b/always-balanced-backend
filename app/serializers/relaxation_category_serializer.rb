@@ -6,7 +6,8 @@ class RelaxationCategorySerializer < ActiveModel::Serializer
  
   def to_serialized_json
       options = {
-          }
+        except: [:updated_at, :created_at]
+      }
       @relaxation_category.to_json(options)
   end
 
