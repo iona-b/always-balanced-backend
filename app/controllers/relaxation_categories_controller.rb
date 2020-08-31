@@ -1,4 +1,5 @@
 class RelaxationCategoriesController < ApplicationController
+    skip_before_action :authorized
 
     def show
         relaxation_category = RelaxationCategory.find_by(id: params[:id])

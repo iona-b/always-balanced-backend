@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+    skip_before_action :authorized
 
     def show
         activity = Activity.find_by(id: params[:id])

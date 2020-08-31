@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+    skip_before_action :authorized
 
     def show
         task = Task.find_by(id: params[:id])

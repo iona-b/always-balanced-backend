@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   resources :relaxation_categories
   resources :users
   post "/login", to: "users#login"
+  # post '/login', to: 'auth#create'
+  get '/profile', to: 'users#profile'
+  # get "/persist", to: "users#persist"
 end

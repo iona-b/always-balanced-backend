@@ -1,4 +1,5 @@
 class ScheduleTasksController < ApplicationController
+    skip_before_action :authorized
 
     def show
         schedule_task = ScheduleTask.find_by(id: params[:id])
