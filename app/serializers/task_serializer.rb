@@ -9,6 +9,7 @@ class TaskSerializer < ActiveModel::Serializer
  
   def to_serialized_json
       options = {
+        except: [:updated_at, :created_at]
       }
       @task.to_json(options)
   end

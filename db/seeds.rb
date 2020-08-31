@@ -41,6 +41,8 @@
 # activity_12 = Activity.create(activity_description:"Call a friend", relaxation_category_id:7, short_activity:false, long_activity:true)
 # activity_13 = Activity.create(activity_description:"Call a family member", relaxation_category_id:7, short_activity:false, long_activity:true)
 # activity_14 = Activity.create(activity_description:"Send a friend a message", relaxation_category_id:7, short_activity:true, long_activity:false)
+# activity_15 = Activity.create(activity_description:"Sketch the view from your window", relaxation_category_id:1, short_activity:true, long_activity:true)
+# activity_16 = Activity.create(activity_description:"Meditate", relaxation_category_id:3, short_activity:true, long_activity:true)
 
 
 # Schedules: date, user_id

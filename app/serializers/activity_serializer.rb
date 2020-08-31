@@ -6,7 +6,8 @@ class ActivitySerializer < ActiveModel::Serializer
  
   def to_serialized_json
       options = {
-          }
+        except: [:updated_at, :created_at]
+      }
       @activity.to_json(options)
   end
 

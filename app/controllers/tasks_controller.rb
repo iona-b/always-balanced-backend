@@ -20,7 +20,7 @@ class TasksController < ApplicationController
     end
 
     def task_params
-        params.permit(:task_description, :task_notes, :user_id)
+        params.permit(:task_description, :task_notes, :user_id, :task)
     end
 
 end
