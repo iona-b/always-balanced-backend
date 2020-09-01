@@ -17,7 +17,7 @@ class ScheduleTasksController < ApplicationController
 
     def create
         @schedule_task = ScheduleTask.create(schedule_task_params)
-        if @schedule_tasks.valid?
+        if @schedule_task.valid?
             render json: ScheduleTaskSerializer.new(@schedule_task).to_serialized_json
         else
             render json: { error: @schedule_task.errors.full_messages }, status: :not_acceptable
