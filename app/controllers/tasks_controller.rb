@@ -22,6 +22,7 @@ class TasksController < ApplicationController
 
     def destroy
         task = Task.find_by(id: params[:id]).destroy
+        render json: UserSerializer.new(task).to_serialized_json
     end
 
     def task_params
