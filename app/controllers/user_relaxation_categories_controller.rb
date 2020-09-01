@@ -16,9 +16,12 @@ class UserRelaxationCategoriesController < ApplicationController
     end
 
     def create
-
-        user_relaxation_category = UserRelaxationCategory.create(user_relaxation_category_params)
-        render json: UserRelaxationCategorySerializer.new(user_relaxation_category).to_serialized_json
+        @user_relaxation_category = UserRelaxationCategory.create(user_relaxation_category_params)
+        if @user_relaxation_category.valid?
+            render json: UserRelaxationCategorySerializer.new(@user_relaxation_category).to_serialized_json
+        else
+            render json: { error: @user_relaxation_category.errors.full_messages }, status: :not_acceptable
+        end
     end
 
     def user_relaxation_category_params

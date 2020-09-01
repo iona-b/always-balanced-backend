@@ -6,4 +6,7 @@ class Schedule < ApplicationRecord
     has_many :tasks, through: :schedule_tasks
     belongs_to :user
 
+    validates :date, presence: true
+    validates :user_id, presence: true
+
 end

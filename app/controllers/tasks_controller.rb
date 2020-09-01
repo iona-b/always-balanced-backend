@@ -2,13 +2,13 @@ class TasksController < ApplicationController
     skip_before_action :authorized
 
     def show
-        task = Task.find_by(id: params[:id])
-        render json: TaskSerializer.new(task).to_serialized_json
+        @task = Task.find_by(id: params[:id])
+        render json: TaskSerializer.new(@task).to_serialized_json
     end
 
     def index
-        tasks = Task.all
-        render json: TaskSerializer.new(tasks).to_serialized_json
+        @tasks = Task.all
+        render json: TaskSerializer.new(@tasks).to_serialized_json
     end
     
     def new
@@ -16,13 +16,21 @@ class TasksController < ApplicationController
     end
 
     def create
-        task = Task.create(task_params)
-        render json: TaskSerializer.new(task).to_serialized_json
+        @task = Task.create(task_params)
+        if @task.valid?
+            render json: TaskSerializer.new(@task).to_serialized_json
+        else
+            render json: { error: @task.errors.full_messages }, status: :not_acceptable
+        end
     end
 
     def destroy
-        task = Task.find_by(id: params[:id]).destroy
-        render json: UserSerializer.new(task).to_serialized_json
+        @task = Task.find_by(id: params[:id]).destroy
+        if @task.valid?
+            render json: TaskSerializer.new(@task).to_serialized_json
+        else
+            render json: { error: @task.errors.full_messages }, status: :not_acceptable
+        end
     end
 
     def task_params
