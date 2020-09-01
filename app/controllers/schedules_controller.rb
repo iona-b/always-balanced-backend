@@ -1,5 +1,5 @@
 class SchedulesController < ApplicationController
-    skip_before_action :authorized
+    before_action :authorized, only: [:create]
 
     def show
         schedule = Schedule.find_by(id: params[:id])

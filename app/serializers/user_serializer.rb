@@ -26,7 +26,7 @@ class UserSerializer < ActiveModel::Serializer
             except: [:updated_at, :created_at]
           },
         },
-        except: [:updated_at, :created_at]
+        except: [:password_digest, :updated_at, :created_at]
       }
       @user.to_json(options)
   end
