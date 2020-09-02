@@ -24,6 +24,15 @@ class SchedulesController < ApplicationController
         end
     end
 
+    def destroy
+        @schedule = Schedule.find_by(id: params[:id]).destroy
+        if @schedule.valid?
+            render json: ScheduleSerializer.new(@schedule).to_serialized_json
+        else
+            render json: { error: @schedule.errors.full_messages }, status: :not_acceptable
+        end
+    end
+
     def schedule_params
         params.require(:schedule).permit(:user_id)
     end

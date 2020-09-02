@@ -16,7 +16,8 @@ class ScheduleTasksController < ApplicationController
     end
 
     def create
-        @schedule_task = ScheduleTask.create(schedule_task_params)
+        schedule_id = Schedule.last.id
+        @schedule_task = ScheduleTask.create(task_id: params[:task_id], schedule_id: schedule_id)
         if @schedule_task.valid?
             render json: ScheduleTaskSerializer.new(@schedule_task).to_serialized_json
         else

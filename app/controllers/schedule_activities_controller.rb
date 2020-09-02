@@ -16,8 +16,11 @@ class ScheduleActivitiesController < ApplicationController
     end
 
     def create
-        @valid_activity = ScheduleActivity.ensure_unique_activities(params[:relaxation_category_id], params[:schedule_id])
-        @schedule_activity = ScheduleActivity.create(schedule_id: schedule_activity_params[:schedule_id], activity_id: @valid_activity.id)
+
+        schedule_id = Schedule.last.id
+        # byebug
+        @valid_activity = ScheduleActivity.ensure_unique_activities(params[:relaxation_category_id], schedule_id)
+        @schedule_activity = ScheduleActivity.create(schedule_id: schedule_id, activity_id: @valid_activity.id)
         if @schedule_activity.valid?
             render json: ScheduleActivitySerializer.new(@schedule_activity).to_serialized_json
         else
