@@ -1,4 +1,5 @@
 class ScheduleActivitiesController < ApplicationController
+    skip_before_action :authorized
 
     def show
         schedule_activity = ScheduleActivity.find_by(id: params[:id])
@@ -15,11 +16,13 @@ class ScheduleActivitiesController < ApplicationController
     end
 
     def create
-        possible_activities = Activity.all.filter do |activity|
-            activity.relaxation_category.id === params[:relaxation_category_id]
+        @valid_activity = ScheduleActivity.ensure_unique_activities(params[:relaxation_category_id], params[:schedule_id])
+        @schedule_activity = ScheduleActivity.create(schedule_id: schedule_activity_params[:schedule_id], activity_id: @valid_activity.id)
+        if @schedule_activity.valid?
+            render json: ScheduleActivitySerializer.new(@schedule_activity).to_serialized_json
+        else
+            render json: { error: @schedule_activity.errors.full_messages }, status: :not_acceptable
         end
-        schedule_activity = ScheduleActivity.create(schedule_id: schedule_activity_params[:schedule_id], activity_id: possible_activities.sample.id)
-        render json: ScheduleActivitySerializer.new(schedule_activity).to_serialized_json
     end
 
     def schedule_activity_params

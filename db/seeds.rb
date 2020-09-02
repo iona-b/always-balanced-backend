@@ -1,6 +1,6 @@
 # # User: username, password_digest, start_work_time, min_num_hours, max_num_hours
 
-# user_1 = User.create(username: "iona", password:'123', start_work_time:"08:00", min_num_hours:6, max_num_hours:9)
+# user_1 = User.create(username: "iona", password:'123', start_work_time:"09:00", min_num_hours:6, max_num_hours:9)
 # user_2 = User.create(username: "michiel", password:'123', start_work_time:"08:00", min_num_hours:6, max_num_hours:9)
 # user_3 = User.create(username: "yoko", password:'123', start_work_time:"09:00", min_num_hours:6, max_num_hours:9)
 
@@ -27,22 +27,49 @@
 
 # # Activites: activity_description, relaxation_category_id, short_activity, long_activity
 
-# activity_1 = Activity.create(activity_description:"Drink some green tea", relaxation_category_id:2, short_activity:true, long_activity:false)
-# activity_2 = Activity.create(activity_description:"Drink some green tea", relaxation_category_id:4, short_activity:true, long_activity:false)
-# activity_3 = Activity.create(activity_description:"Eat some chocolate", relaxation_category_id:4, short_activity:true, long_activity:false)
-# activity_4 = Activity.create(activity_description:"Meditate", relaxation_category_id:2, short_activity:true, long_activity:true)
-# activity_5 = Activity.create(activity_description:"Take a short walk", relaxation_category_id:2, short_activity:true, long_activity:false)
-# activity_6 = Activity.create(activity_description:"Massage your scalp", relaxation_category_id:2, short_activity:true, long_activity:false)
-# activity_7 = Activity.create(activity_description:"Massage your scalp", relaxation_category_id:8, short_activity:true, long_activity:false)
-# activity_8 = Activity.create(activity_description:"Journal about your feelings", relaxation_category_id:2, short_activity:true, long_activity:false)
-# activity_9 = Activity.create(activity_description:"Journal about your feelings", relaxation_category_id:5, short_activity:true, long_activity:false)
-# activity_10 = Activity.create(activity_description:"Cuddle your pet", relaxation_category_id:7, short_activity:true, long_activity:false)
-# activity_11 = Activity.create(activity_description:"Cuddle your pet", relaxation_category_id:8, short_activity:true, long_activity:false)
-# activity_12 = Activity.create(activity_description:"Call a friend", relaxation_category_id:7, short_activity:false, long_activity:true)
-# activity_13 = Activity.create(activity_description:"Call a family member", relaxation_category_id:7, short_activity:false, long_activity:true)
-# activity_14 = Activity.create(activity_description:"Send a friend a message", relaxation_category_id:7, short_activity:true, long_activity:false)
-# activity_15 = Activity.create(activity_description:"Sketch the view from your window", relaxation_category_id:1, short_activity:true, long_activity:true)
-# activity_16 = Activity.create(activity_description:"Meditate", relaxation_category_id:3, short_activity:true, long_activity:true)
+# # 1. Creative
+# Activity.create(activity_description:"Journal about your feelings", relaxation_category_id:1, short_activity:true, long_activity:false)
+# Activity.create(activity_description:"Design a postcard that you will never send", relaxation_category_id:1, short_activity:false, long_activity:true)
+# Activity.create(activity_description:"Sketch the view from your window", relaxation_category_id:1, short_activity:true, long_activity:true) 
+
+# # 2. Sports
+# Activity.create(activity_description:"Meditate", relaxation_category_id:2, short_activity:true, long_activity:true)
+# Activity.create(activity_description:"Take a short walk", relaxation_category_id:2, short_activity:true, long_activity:false)
+# Activity.create(activity_description:"Spend some time practising yoga", relaxation_category_id:2, short_activity:true, long_activity:true)
+
+# # 3. Mindfulness
+# Activity.create(activity_description:"Drink some green tea", relaxation_category_id:3, short_activity:true, long_activity:false)
+# Activity.create(activity_description:"Massage your scalp", relaxation_category_id:3, short_activity:true, long_activity:false)
+# Activity.create(activity_description:"Meditate", relaxation_category_id:3, short_activity:true, long_activity:true)
+# Activity.create(activity_description:"Spend some time practising yoga", relaxation_category_id:3, short_activity:true, long_activity:true)
+
+# # 4. Digital
+# Activity.create(activity_description:"Watch an episode of your favourite tv show", relaxation_category_id:4, short_activity:false, long_activity:true)
+# Activity.create(activity_description:"Create a new board on Pinterest", relaxation_category_id:4, short_activity:true, long_activity:true)
+
+# # 5. Culinary
+# Activity.create(activity_description:"Drink some green tea", relaxation_category_id:5, short_activity:true, long_activity:false)
+# Activity.create(activity_description:"Eat some chocolate", relaxation_category_id:5, short_activity:true, long_activity:false)
+# Activity.create(activity_description:"Prepare a meal you've never made before", relaxation_category_id:5, short_activity:false, long_activity:true)
+# Activity.create(activity_description:"Find a new recipe to try", relaxation_category_id:5, short_activity:true, long_activity:false)
+
+# # 6. Reading and Writing 
+# Activity.create(activity_description:"Read a chapter of the book you're currently reading", relaxation_category_id:6, short_activity:true, long_activity:true)
+# Activity.create(activity_description:"Journal about your feelings", relaxation_category_id:6, short_activity:true, long_activity:false)
+
+# # 7. Musical
+# Activity.create(activity_description:"Listen to your favourite song", relaxation_category_id:7, short_activity:true, long_activity:false)
+# Activity.create(activity_description:"Listen to a song you've never heard before", relaxation_category_id:7, short_activity:true, long_activity:false)
+
+# # 8. Social
+# Activity.create(activity_description:"Cuddle your pet", relaxation_category_id:8, short_activity:true, long_activity:false)
+# Activity.create(activity_description:"Call a friend", relaxation_category_id:8, short_activity:false, long_activity:true)
+# Activity.create(activity_description:"Call a family member", relaxation_category_id:8, short_activity:false, long_activity:true)
+# Activity.create(activity_description:"Send a friend a message", relaxation_category_id:8, short_activity:true, long_activity:false)
+
+# # 9. Comfort
+# Activity.create(activity_description:"Massage your scalp", relaxation_category_id:9, short_activity:true, long_activity:false)
+# Activity.create(activity_description:"Cuddle your pet", relaxation_category_id:9, short_activity:true, long_activity:false)
 
 
 # Schedules: date, user_id

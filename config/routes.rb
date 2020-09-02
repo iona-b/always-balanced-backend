@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :activities
   resources :relaxation_categories
   resources :users
-  post "/login", to: "users#login"
+  post '/login', to: 'users#login'
+  get '/profile', to: 'users#profile'
+  get '/persist', to: 'users#persist'
 end

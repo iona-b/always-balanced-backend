@@ -5,4 +5,6 @@ class RelaxationCategory < ApplicationRecord
     has_many :activities
     has_many :schedule_activities, through: :activities
 
+    validates :category_name, presence: true
+
 end
