@@ -18,7 +18,6 @@ class ScheduleActivitiesController < ApplicationController
     def create
 
         schedule_id = Schedule.last.id
-        # byebug
         @valid_activity = ScheduleActivity.ensure_unique_activities(params[:relaxation_category_id], schedule_id)
         @schedule_activity = ScheduleActivity.create(schedule_id: schedule_id, activity_id: @valid_activity.id)
         if @schedule_activity.valid?
