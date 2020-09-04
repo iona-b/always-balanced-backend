@@ -24,6 +24,15 @@ class UserRelaxationCategoriesController < ApplicationController
         end
     end
 
+    def destroy
+        @user_relaxation_category = UserRelaxationCategory.find_by(id: params[:id]).destroy
+        if @user_relaxation_category.valid?
+            render json: UserRelaxationCategorySerializer.new(@user_relaxation_category).to_serialized_json
+        else
+            render json: { error: @user_relaxation_category.errors.full_messages }, status: :not_acceptable
+        end
+    end
+
     def user_relaxation_category_params
         params.permit(:user_id, :relaxation_category_id, :user_relaxation_category)
     end
