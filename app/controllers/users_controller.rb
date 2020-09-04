@@ -11,15 +11,25 @@ class UsersController < ApplicationController
         render json: UserSerializer.new(users).to_serialized_json
     end
 
-    def new
-        @user = User.new
-    end
-
     def create
         @user = User.create(user_params)
         if @user.valid?
             token = encode_token(user_id: @user.id)
             render json: {user: UserSerializer.new(@user).to_serialized_json, token: token}, status: :created
+        else
+            render json: { error: @user.errors.full_messages }, status: :not_acceptable
+        end
+    end
+
+    def update
+        @user = User.find_by(id: params[:id])
+        if user_params[:start_work_time]
+            start_work_time = user_params[:start_work_time]
+        else
+            start_work_time = @user.start_work_time
+        end
+        if @user.update(username: user_params[:username], start_work_time: start_work_time, min_num_hours: user_params[:min_num_hours], max_num_hours: user_params[:max_num_hours])
+            render json: {user: UserSerializer.new(@user).to_serialized_json}
         else
             render json: { error: @user.errors.full_messages }, status: :not_acceptable
         end
@@ -49,7 +59,7 @@ class UsersController < ApplicationController
     private 
 
     def user_params
-        params.permit(:username, :password, :start_work_time, :min_num_hours, :max_num_hours, :user)
+        params.permit(:username, :password, :start_work_time, :min_num_hours, :max_num_hours, :user, :id)
     end
 
 end

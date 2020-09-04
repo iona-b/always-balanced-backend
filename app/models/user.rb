@@ -10,7 +10,6 @@ class User < ApplicationRecord
 
     validates :username, presence: true
     validates :username, uniqueness: true
-    validates :password, presence: true
     validates :start_work_time, presence: true
     validates :min_num_hours, presence: true
     validates :max_num_hours, presence: true
