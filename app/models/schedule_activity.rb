@@ -6,17 +6,23 @@ class ScheduleActivity < ApplicationRecord
     validates :schedule_id, presence: true
     validates :activity_id, presence: true
 
-    def self.get_possible_activities(chosen_relaxation_category_id, schedule_id)
-        possible_activities = Activity.all.filter do |activity|
-            activity.relaxation_category.id === chosen_relaxation_category_id
+    def self.get_possible_activities(chosen_relaxation_category_id, schedule_id, activity_length)
+        if activity_length === "short"
+            possible_activities = Activity.all.filter do |activity|
+                activity.relaxation_category.id === chosen_relaxation_category_id && activity.short_activity === true
+            end
+        else 
+            possible_activities = Activity.all.filter do |activity|
+                activity.relaxation_category.id === chosen_relaxation_category_id && activity.long_activity === true
+            end
         end
         activity = possible_activities.sample
     end
 
-    def self.ensure_unique_activities(chosen_relaxation_category_id, schedule_id)
+    def self.ensure_unique_activities(chosen_relaxation_category_id, schedule_id, activity_length)
         valid = false
         while (valid === false) do
-            activity = ScheduleActivity.get_possible_activities(chosen_relaxation_category_id, schedule_id)
+            activity = ScheduleActivity.get_possible_activities(chosen_relaxation_category_id, schedule_id, activity_length)
             schedule = Schedule.find_by(id: schedule_id)
             if schedule.schedule_activities.count > 0
                 activities = schedule.schedule_activities.filter do |schedule_activity|
