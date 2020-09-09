@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     end
 
     def update
+        # Move check start time functionality to front end
         @user = User.find_by(id: params[:id])
         if user_params[:start_work_time]
             start_work_time = user_params[:start_work_time]
