@@ -16,6 +16,7 @@ class ScheduleTasksController < ApplicationController
     end
 
     def create
+        sleep 1
         schedule_id = Schedule.last.id
         @schedule_task = ScheduleTask.create(task_id: params[:task_id], schedule_id: schedule_id)
         if @schedule_task.valid?
