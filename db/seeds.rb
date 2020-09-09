@@ -38,6 +38,7 @@
 # Activity.create(activity_description:"Do some freestyle dancing to your favourite song", relaxation_category_id:1, short_activity:true, long_activity:false)
 # Activity.create(activity_description:"Draw your favourite cartoon character", relaxation_category_id:1, short_activity:true, long_activity:true)
 # Activity.create(activity_description:"Learn a new card trick", relaxation_category_id:1, short_activity:true, long_activity:false)
+# Activity.create(activity_description:"Sign up for an online class to learn a new creative hobby", relaxation_category_id:1, short_activity:true, long_activity:false)
 
 # # 2. Sports
 # Activity.create(activity_description:"Take a short walk", relaxation_category_id:2, short_activity:true, long_activity:false)

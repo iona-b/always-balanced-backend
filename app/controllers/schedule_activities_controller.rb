@@ -16,7 +16,7 @@ class ScheduleActivitiesController < ApplicationController
     end
 
     def create
-
+        sleep 1
         schedule_id = Schedule.last.id
         @valid_activity = ScheduleActivity.ensure_unique_activities(params[:relaxation_category_id], schedule_id, params[:activity_length])
         @schedule_activity = ScheduleActivity.create(schedule_id: schedule_id, activity_id: @valid_activity.id)
