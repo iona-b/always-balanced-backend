@@ -1,4 +1,4 @@
-![always balanced logo](src/images/always-balanced-readme.png)
+![always balanced logo](./always-balanced-readme.png)
 
 ## About
 
