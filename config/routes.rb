@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
   resources :schedule_activities
   resources :schedules
   resources :schedule_tasks
