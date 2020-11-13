@@ -129,7 +129,7 @@ Activity.create(activity_description:"Take a bath", relaxation_category_id:9, sh
 Activity.create(activity_description:"Watch your favourite light-hearted film", relaxation_category_id:9, short_activity:false, long_activity:true)
 
 
-Schedules: date, user_id
+# Schedules: date, user_id
 
 schedule_1 = Schedule.create(date: "2020-08-29", user_id: 1)
 
