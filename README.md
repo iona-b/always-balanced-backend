@@ -24,6 +24,29 @@ rails server            # to start up your rails server
 
 You should now cd into the always-balanced-frontend directory and run the following command in your terminal:
 
+**To see the live demo, click [here](https://always-balanced-frontend.herokuapp.com/).**
+
+**To see the full demo, click [here](https://www.youtube.com/watch?v=qA_5IIvbeGw).**
+
+
+## Installation
+
+Please find the repositories here: https://github.com/iona-b/always-balanced-frontend and https://github.com/iona-b/always-balanced-backend.
+
+To run Always Balanced, first clone both the front and back end repositories into a single directory. 
+
+cd into the always-balanced-backend directory and run the following commands in your terminal:
+
+```
+bundle install          # to track and install the exact versions of ruby gems needed for Always Balanced
+rails db:create         # to create PostgreSQL database
+rails db:migrate        # to run table migrations
+rails db:seed           # to seed your database
+rails server            # to start up your rails server
+```
+
+You should now cd into the always-balanced-frontend directory and run the following commands in your terminal:
+
 ```
 npm install             # to download the necessary React packages and dependencies
 npm start               # to open the app in your browser
